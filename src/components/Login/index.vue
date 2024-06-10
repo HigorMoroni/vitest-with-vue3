@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const handleSubmit = () => {
+  router.push({name: 'dash'});
+}
 </script>
 
 <template>
@@ -8,7 +15,7 @@
     <form>
       <input type="text" placeholder="Insira seu e-mail" />
       <input type="text" placeholder="Insira sua senha" />
-      <button>Login</button>
+      <button @click.prevent="handleSubmit">Login</button>
     </form>
   </div>
 </template>
